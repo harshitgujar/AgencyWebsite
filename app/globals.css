@@ -1,0 +1,33 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+  font-family: 'Diamond_Grotesk';
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+}
+
+@font-face {
+  font-family: 'yagiza';
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+}
+
+@font-face {
+  font-family: 'Bricolage_Grotesque';
+  src: url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
+}
+
+@font-face {
+  font-family: 'Darker_Grotesque';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
