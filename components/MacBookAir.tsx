@@ -1,3 +1,6 @@
+"use client";
+import React, { useState, useEffect } from 'react';
+import { ScrambleText } from './ScrambleText';
 const imgRectangle1 = "https://www.figma.com/api/mcp/asset/67af73bc-f664-45bb-a3b0-37ed34ffe6d7";
 const imgRectangle18 = "https://www.figma.com/api/mcp/asset/98cd0bd3-9a08-4874-9be9-28c67899b9e8";
 const imgRectangle20 = "https://www.figma.com/api/mcp/asset/d0475214-bda9-433a-aa3f-8a7c79d9d6d4";
@@ -20,6 +23,17 @@ const imgLine4 = "https://www.figma.com/api/mcp/asset/b75ebf2e-eada-46e2-a692-54
 const imgFrame1 = "https://www.figma.com/api/mcp/asset/1739e85a-1e48-44ae-812d-735a13a74eff";
 
 export default function MacBookAir() {
+  const [scrambleTrigger, setScrambleTrigger] = useState(0);
+
+  useEffect(() => {
+    // 3 seconds of original text + 1.5 seconds for animation
+    const interval = setInterval(() => {
+      setScrambleTrigger((prev: number) => prev + 1);
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="bg-[#080808] relative w-screen min-h-screen" data-name="MacBook Air - 2" data-node-id="7:29">
       <div className="absolute bg-black h-[6518px] left-0 top-[681px] w-full" data-node-id="38:40" />
@@ -43,24 +57,36 @@ export default function MacBookAir() {
         <p className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[1149px] mix-blend-difference not-italic text-[#bbb] text-[12px] top-[67px] whitespace-nowrap" data-node-id="7:38">
           CONTACT
         </p>
-        <p className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%-538px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap" data-node-id="7:39">
-          MAKE
-        </p>
-        <p className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%-331px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap" data-node-id="7:40">
-          WORK
-        </p>
-        <p className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%-119px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap" data-node-id="7:41">
-          THAT
-        </p>
-        <p className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%+84px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap" data-node-id="7:42">
-          MATTERS
-        </p>
-        <p className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%+319px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap" data-node-id="7:43">
-          TO
-        </p>
-        <p className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%+504px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap" data-node-id="7:44">
-          YOU
-        </p>
+        <ScrambleText
+          text="MAKE"
+          className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%-538px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap"
+          trigger={scrambleTrigger}
+        />
+        <ScrambleText
+          text="WORK"
+          className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%-331px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap"
+          trigger={scrambleTrigger}
+        />
+        <ScrambleText
+          text="THAT"
+          className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%-119px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap"
+          trigger={scrambleTrigger}
+        />
+        <ScrambleText
+          text="MATTERS"
+          className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%+84px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap"
+          trigger={scrambleTrigger}
+        />
+        <ScrambleText
+          text="TO"
+          className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%+319px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap"
+          trigger={scrambleTrigger}
+        />
+        <ScrambleText
+          text="YOU"
+          className="absolute font-['Diamond_Grotesk:Regular',sans-serif] leading-[normal] left-[calc(50%+504px)] not-italic text-[16px] text-white top-[475px] whitespace-nowrap"
+          trigger={scrambleTrigger}
+        />
         <p className="absolute font-['yagiza:Regular',sans-serif] leading-[normal] left-[47px] not-italic text-[40px] text-white top-[62px] whitespace-nowrap" data-node-id="54:114">
           el
         </p>
