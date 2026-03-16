@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 
 interface ScrambleTextProps {
   text: string;
@@ -12,11 +12,12 @@ interface ScrambleTextProps {
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()';
 
 export const ScrambleText = ({ text, className, trigger, duration = 1500 }: ScrambleTextProps) => {
-  const [displayText, setDisplayText] = useState(text);
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const frameRef = useRef<number>(0);
 
   const scramble = useCallback(() => {
     let frame = 0;
-    const totalFrames = Math.floor(duration / 16); // ~60fps
+    const totalFrames = Math.floor(duration / 32); // ~30fps instead of 60fps — still looks smooth, half the work
     
     const animate = () => {
       frame++;
@@ -27,23 +28,22 @@ export const ScrambleText = ({ text, className, trigger, duration = 1500 }: Scra
           .split('')
           .map((char, index) => {
             if (char === ' ') return ' ';
-            
-            // Resolve characters based on progress
-            // Each character has a "resolution point" between 0 and 1
-            const charResolutionPoint = index / text.length * 0.5; // resolve from left to right over first 50% of progress
-            const isResolved = progress > (charResolutionPoint + 0.3); // add some buffer
-            
-            if (isResolved || Math.random() < 0.1) {
-              return char;
-            }
+            const charResolutionPoint = index / text.length * 0.5;
+            const isResolved = progress > (charResolutionPoint + 0.3);
+            if (isResolved || Math.random() < 0.1) return char;
             return CHARS[Math.floor(Math.random() * CHARS.length)];
           })
           .join('');
         
-        setDisplayText(scrambled);
-        requestAnimationFrame(animate);
+        // Direct DOM update instead of setState
+        if (textRef.current) {
+          textRef.current.textContent = scrambled;
+        }
+        frameRef.current = requestAnimationFrame(animate);
       } else {
-        setDisplayText(text);
+        if (textRef.current) {
+          textRef.current.textContent = text;
+        }
       }
     };
 
@@ -51,10 +51,11 @@ export const ScrambleText = ({ text, className, trigger, duration = 1500 }: Scra
   }, [text, duration]);
 
   useEffect(() => {
-    if (trigger > 0) {
-      scramble();
-    }
+    scramble();
+    return () => {
+      if (frameRef.current) cancelAnimationFrame(frameRef.current);
+    };
   }, [trigger, scramble]);
 
-  return <p className={className}>{displayText}</p>;
+  return <p ref={textRef} className={className}>{text}</p>;
 };

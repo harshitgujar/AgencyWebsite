@@ -1,5 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import CustomCursor from '@/components/CustomCursor'
+import SmoothScroll from '@/components/SmoothScroll'
+import Navbar from '@/components/Navbar'
+import LiquidBackground from '@/components/LiquidBackground'
 
 export const metadata: Metadata = {
   title: 'United Unbound',
@@ -13,7 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#080808]">{children}</body>
+      <body className="bg-black overflow-x-hidden">
+        <LiquidBackground />
+        <Navbar />
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
+        <CustomCursor />
+      </body>
     </html>
   )
 }
