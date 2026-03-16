@@ -157,7 +157,7 @@ export default function MacBookAir() {
   return (
     <div 
       className="bg-transparent relative w-screen overflow-x-hidden" 
-      style={{ height: '7910px', willChange: 'scroll-position' }}
+      style={{ height: '9160px', willChange: 'scroll-position' }}
       data-name="MacBookAir - 2" 
       data-node-id="7:29"
     >
@@ -214,17 +214,26 @@ export default function MacBookAir() {
         />
       </div>
       
-      {/* Clean vertical track instead of cluttered dashes */}
-      <div className="absolute left-[144px] top-[960px] h-[600px] w-px bg-black/10" />
-      <div className="absolute left-[144px] top-[960px] h-[40px] w-px bg-black" />
-
-      <div className="absolute flex items-center justify-center left-[130px] size-[8px] top-[957px]">
-        <div className="flex-none rotate-90">
-          <div className="relative size-[8px]" data-node-id="27:26">
-            <div className="absolute bottom-1/4 left-[15.83%] right-[15.83%] top-[12.5%]">
-              <img alt="" className="block max-w-none size-full" src={imgPolygon1} />
+      {/* Sticky Project Progress Track */}
+      <div 
+        className="absolute left-0 w-full pointer-events-none" 
+        style={{ top: '957px', height: '1836px' }}
+      >
+        <div className="sticky top-[107px]">
+          {/* Polygon Head */}
+          <div className="absolute flex items-center justify-center left-[130px] size-[8px] top-0">
+            <div className="flex-none rotate-90">
+              <div className="relative size-[8px]" data-node-id="27:26">
+                <div className="absolute bottom-1/4 left-[15.83%] right-[15.83%] top-[12.5%]">
+                  <img alt="" className="block max-w-none size-full" src={imgPolygon1} />
+                </div>
+              </div>
             </div>
           </div>
+          
+          {/* Clean vertical track */}
+          <div className="absolute left-[144px] top-[3px] h-[600px] w-px bg-black/10" />
+          <div className="absolute left-[144px] top-[3px] h-[40px] w-px bg-black" />
         </div>
       </div>
       <div className="absolute h-[421px] left-[266px] top-[993px] w-[811px]" data-node-id="27:27">
@@ -236,19 +245,38 @@ export default function MacBookAir() {
       <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[1152px] not-italic text-[32px] text-black top-[1202px] whitespace-nowrap" data-node-id="27:73">
         01
       </p>
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[266px] not-italic text-[#6e6d6d] text-[14px] top-[1461px] uppercase w-[771px]" data-node-id="27:123">{`Creative Direction, Artist Curation, Art Direction, Key Visual & Video Production, Event Planning, Event Production`}</p>
+
+      {/* Project 02 */}
+      <div className="absolute h-[421px] left-[266px] top-[1593px] w-[811px]">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src="/images/project_2.png" />
+      </div>
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[266px] not-italic text-[20px] text-black top-[2034px] whitespace-nowrap">
+        ARCHITECTURAL VISTA, MINIMALIST SPATIAL DESIGN
+      </p>
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[266px] not-italic text-[#6e6d6d] text-[14px] top-[2061px] uppercase w-[771px]">{`3D Visualization, Spatial Planning, Interior Curation, Lighting Design, Material Sourcing`}</p>
+
+      {/* Project 03 */}
+      <div className="absolute h-[421px] left-[266px] top-[2193px] w-[811px]">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src="/images/project_3.png" />
+      </div>
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[266px] not-italic text-[20px] text-black top-[2634px] whitespace-nowrap">
+        DIGITAL FRONTIER, INTERACTIVE EXPERIENCES
+      </p>
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[266px] not-italic text-[#6e6d6d] text-[14px] top-[2661px] uppercase w-[771px]">{`UI/UX Research, Prototyping, Motion Graphics, Web Interaction, Brand Innovation`}</p>
       <div id="work" className="absolute top-[847px] left-[147px]">
         <p className="font-['DiamondGrotesk',sans-serif] leading-[normal] not-italic text-[24px] text-black whitespace-nowrap" data-node-id="27:117">
           WHAT WE DO
         </p>
       </div>
-      <div id="team" className="absolute top-[5153px] left-[147px]">
+      <div id="team" className="absolute top-[6403px] left-[147px]">
         <p className="font-['DiamondGrotesk',sans-serif] leading-[normal] not-italic text-[24px] text-black whitespace-nowrap" data-node-id="27:121">
           TEAM
         </p>
       </div>
       <MagneticButton
         onClick={() => scrollToSection('work')}
-        className="-translate-x-1/2 absolute left-1/2 top-[1629px] group"
+        className="-translate-x-1/2 absolute left-1/2 top-[2879px] group"
       >
         <div
           className="bg-[#d8b4fe] h-[46px] rounded-[40px] w-[256px] flex items-center justify-center transition-all duration-500 group-hover:bg-black"
@@ -263,7 +291,7 @@ export default function MacBookAir() {
         </div>
       </MagneticButton>
       <MagneticButton
-        className="absolute left-[670px] top-[2765px] flex items-center gap-2 group cursor-none"
+        className="absolute left-[670px] top-[4015px] flex items-center gap-2 group cursor-none"
         onClick={() => scrollToSection('contact')}
       >
         <p className="font-['DiamondGrotesk',sans-serif] text-[14px] text-[#444] group-hover:text-black transition-colors underline decoration-solid whitespace-nowrap">
@@ -285,16 +313,16 @@ export default function MacBookAir() {
         </svg>
       </MagneticButton>
       <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[266px] not-italic text-[#6e6d6d] text-[14px] top-[1461px] uppercase w-[771px]" data-node-id="27:123">{`Creative Direction, Artist Curation, Art Direction, Key Visual & Video Production, Event Planning, Event Production`}</p>
-      <div className="absolute overflow-hidden h-[403px] left-[452px] top-[5243px] w-[311px]" data-node-id="27:128">
+      <div className="absolute overflow-hidden h-[403px] left-[452px] top-[6493px] w-[311px]" data-node-id="27:128">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle20} />
       </div>
-      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[452px] not-italic text-[14px] text-black top-[5653px] uppercase whitespace-nowrap" data-node-id="27:134">
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[452px] not-italic text-[14px] text-black top-[6903px] uppercase whitespace-nowrap" data-node-id="27:134">
         (01)
       </p>
-      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[122.96500396728516%] left-[739px] not-italic text-[32px] text-black top-[5359px] uppercase w-[189px]" data-node-id="27:135">
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[122.96500396728516%] left-[739px] not-italic text-[32px] text-black top-[6609px] uppercase w-[189px]" data-node-id="27:135">
         HARSHIT GUJAR
       </p>
-      <MagneticButton className="absolute h-[75px] left-[739px] top-[5475px] w-[76px] flex items-center justify-center" data-node-id="33:2" onClick={() => setOpenPanel(openPanel === 0 ? null : 0)}>
+      <MagneticButton className="absolute h-[75px] left-[739px] top-[6725px] w-[76px] flex items-center justify-center" data-node-id="33:2" onClick={() => setOpenPanel(openPanel === 0 ? null : 0)}>
         <div className="absolute inset-0 rounded-full border-[0.2px] border-black" />
         <svg className="w-10 h-10 text-black relative z-10 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="0.6" style={{ transform: openPanel === 0 ? 'rotate(45deg)' : 'rotate(0deg)' }}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m-7-7h14" />
@@ -304,17 +332,17 @@ export default function MacBookAir() {
         isOpen={openPanel === 0}
         onClose={() => setOpenPanel(null)}
         member={teamMembers[0]}
-        top={5560}
+        top={6810}
         left={775}
       />
-      <div className="absolute overflow-hidden h-[403px] left-[164px] top-[5930px] w-[311px]" data-node-id="33:4">
+      <div className="absolute overflow-hidden h-[403px] left-[164px] top-[7180px] w-[311px]" data-node-id="33:4">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle21} />
       </div>
-      <div className="absolute font-['DiamondGrotesk',sans-serif] leading-[122.96500396728516%] left-[451px] not-italic text-[32px] text-black top-[6047px] uppercase w-[189px] whitespace-pre-wrap" data-node-id="33:5">
+      <div className="absolute font-['DiamondGrotesk',sans-serif] leading-[122.96500396728516%] left-[451px] not-italic text-[32px] text-black top-[7297px] uppercase w-[189px] whitespace-pre-wrap" data-node-id="33:5">
         <p className="mb-0">{`aMAAN `}</p>
         <p>AHMED</p>
       </div>
-      <MagneticButton className="absolute h-[75px] left-[451px] top-[6163px] w-[76px] flex items-center justify-center" data-node-id="33:7" onClick={() => setOpenPanel(openPanel === 1 ? null : 1)}>
+      <MagneticButton className="absolute h-[75px] left-[451px] top-[7413px] w-[76px] flex items-center justify-center" data-node-id="33:7" onClick={() => setOpenPanel(openPanel === 1 ? null : 1)}>
         <div className="absolute inset-0 rounded-full border-[0.2px] border-black" />
         <svg className="w-10 h-10 text-black relative z-10 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="0.6" style={{ transform: openPanel === 1 ? 'rotate(45deg)' : 'rotate(0deg)' }}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m-7-7h14" />
@@ -324,20 +352,20 @@ export default function MacBookAir() {
         isOpen={openPanel === 1}
         onClose={() => setOpenPanel(null)}
         member={teamMembers[1]}
-        top={6248}
+        top={7498}
         left={487}
       />
-      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[164px] not-italic text-[14px] text-black top-[6340px] uppercase whitespace-nowrap" data-node-id="33:8">
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[164px] not-italic text-[14px] text-black top-[7590px] uppercase whitespace-nowrap" data-node-id="33:8">
         (02)
       </p>
-      <div className="absolute overflow-hidden h-[403px] left-[452px] top-[6644px] w-[311px]" data-node-id="33:12">
+      <div className="absolute overflow-hidden h-[403px] left-[452px] top-[7894px] w-[311px]" data-node-id="33:12">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle22} />
       </div>
-      <div className="absolute font-['DiamondGrotesk',sans-serif] leading-[122.96500396728516%] left-[739px] not-italic text-[32px] text-black top-[6760px] uppercase w-[189px] whitespace-pre-wrap" data-node-id="33:13">
+      <div className="absolute font-['DiamondGrotesk',sans-serif] leading-[122.96500396728516%] left-[739px] not-italic text-[32px] text-black top-[8010px] uppercase w-[189px] whitespace-pre-wrap" data-node-id="33:13">
         <p className="mb-0">{`aMAAN `}</p>
         <p>AHMED</p>
       </div>
-      <MagneticButton className="absolute h-[75px] left-[739px] top-[6876px] w-[76px] flex items-center justify-center" data-node-id="33:15" onClick={() => setOpenPanel(openPanel === 2 ? null : 2)}>
+      <MagneticButton className="absolute h-[75px] left-[739px] top-[8126px] w-[76px] flex items-center justify-center" data-node-id="33:15" onClick={() => setOpenPanel(openPanel === 2 ? null : 2)}>
         <div className="absolute inset-0 rounded-full border-[0.2px] border-black" />
         <svg className="w-10 h-10 text-black relative z-10 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="0.6" style={{ transform: openPanel === 2 ? 'rotate(45deg)' : 'rotate(0deg)' }}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m-7-7h14" />
@@ -347,10 +375,10 @@ export default function MacBookAir() {
         isOpen={openPanel === 2}
         onClose={() => setOpenPanel(null)}
         member={teamMembers[2]}
-        top={6960}
+        top={8210}
         left={775}
       />
-      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[452px] not-italic text-[14px] text-black top-[7054px] uppercase whitespace-nowrap" data-node-id="33:16">
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[452px] not-italic text-[14px] text-black top-[8304px] uppercase whitespace-nowrap" data-node-id="33:16">
         (03)
       </p>
       <div className="-translate-y-1/2 absolute aspect-[194.28570556640625/77.02499389648438] left-[-9.53%] right-[107.03%] top-[calc(50%-512.5px)]" data-name="Vector" data-node-id="27:114">
@@ -359,16 +387,16 @@ export default function MacBookAir() {
       <div className="absolute left-[367px] size-[736px] top-[-1124px]" data-name="4305fdf59819d6ff1590b9f5c7b0f813 1" data-node-id="7:46">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img4305Fdf59819D6Ff1590B9F5C7B0F8131} />
       </div>
-      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[453px] not-italic text-black text-[14px] top-[5218px] uppercase whitespace-nowrap" data-node-id="27:129">
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[453px] not-italic text-black text-[14px] top-[6468px] uppercase whitespace-nowrap" data-node-id="27:129">
         Branch Director, CREATIVE Director
       </p>
-      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[165px] not-italic text-black text-[14px] top-[5906px] uppercase whitespace-nowrap" data-node-id="33:9">
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[165px] not-italic text-black text-[14px] top-[7156px] uppercase whitespace-nowrap" data-node-id="33:9">
         Branch Director, CREATIVE Director
       </p>
-      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[453px] not-italic text-black text-[14px] top-[6619px] uppercase whitespace-nowrap" data-node-id="33:17">
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[453px] not-italic text-black text-[14px] top-[7869px] uppercase whitespace-nowrap" data-node-id="33:17">
         Branch Director, CREATIVE Director
       </p>
-      <div id="contact" className="absolute w-full bg-[#fdfdfd] text-black flex flex-col items-center overflow-hidden" style={{ top: '7199px', height: '711px' }}>
+      <div id="contact" className="absolute w-full bg-[#fdfdfd] text-black flex flex-col items-center overflow-hidden" style={{ top: '8449px', height: '711px' }}>
         <div className="w-full max-w-[1200px] h-full flex flex-col py-16 px-8 justify-between relative">
           
           {/* Top Info Section */}
@@ -441,7 +469,7 @@ export default function MacBookAir() {
         </div>
       </div>
       <ScrollAnimatedText
-        className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[147px] not-italic text-[64px] top-[2007px] w-[763px] whitespace-pre-wrap"
+        className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[147px] not-italic text-[64px] top-[3257px] w-[763px] whitespace-pre-wrap"
         text={`We don't follow trends; we make them ancient history. In a world of static, quiet brands die—we make yours unignorable. Stop blending in and get loud. Just say "hi" to see exactly how we'll dominate together.`}
       />
       <div className="absolute flex h-[10px] items-center justify-center left-[311px] top-[873px] w-[11px]">
@@ -453,12 +481,12 @@ export default function MacBookAir() {
           </div>
         </div>
       </div>
-      <div id="manifesto" className="absolute top-[1897px] left-[147px]">
+      <div id="manifesto" className="absolute top-[3147px] left-[147px]">
         <p className="font-['DiamondGrotesk',sans-serif] leading-[normal] not-italic text-[24px] text-black whitespace-nowrap" data-node-id="50:81">
           MANIFESTO
         </p>
       </div>
-      <div className="absolute flex h-[10px] items-center justify-center left-[296px] top-[1920px] w-[11px]">
+      <div className="absolute flex h-[10px] items-center justify-center left-[296px] top-[3170px] w-[11px]">
         <div className="flex-none rotate-[42.27deg]">
           <div className="h-0 relative w-[14.866px]" data-node-id="50:82">
             <div className="absolute inset-[-7.36px_-6.73%_-7.36px_0]">
@@ -468,10 +496,10 @@ export default function MacBookAir() {
         </div>
       </div>
       {/* Removed static frame arrow, now unified in MagneticButton above */}
-      <div className="absolute left-[217px] size-[27px] top-[5164px]" data-name="Frame" data-node-id="59:163">
+      <div className="absolute left-[217px] size-[27px] top-[6414px]" data-name="Frame" data-node-id="59:163">
         <img alt="" className="absolute block max-w-none size-full brightness-0" src={imgFrame} />
       </div>
-      <div ref={greenSectionRef} className="absolute left-[123px] size-[680px] top-[2983px]" data-node-id="50:99">
+      <div ref={greenSectionRef} className="absolute left-[123px] size-[680px] top-[4233px]" data-node-id="50:99">
         {/* Base border */}
         <div className="absolute inset-0 rounded-full border-[2px] border-[#d8b4fe]/15" />
         {/* Fill border */}
@@ -487,7 +515,7 @@ export default function MacBookAir() {
           }}
         />
       </div>
-      <div className="absolute left-[476px] size-[680px] top-[2983px]" data-node-id="50:100">
+      <div className="absolute left-[476px] size-[680px] top-[4233px]" data-node-id="50:100">
         <div className="absolute inset-0 rounded-full border-[2px] border-[#d8b4fe]/15" />
         <div
           className="absolute inset-0 rounded-full border-[2px] border-[#d8b4fe]/60 transition-all ease-out"
@@ -499,7 +527,7 @@ export default function MacBookAir() {
           }}
         />
       </div>
-      <div className="absolute flex h-[403.699px] items-center justify-center left-0 top-[3267px] w-[1279.046px]">
+      <div className="absolute flex h-[403.699px] items-center justify-center left-0 top-[4517px] w-[1279.046px]">
         <div className="flex-none rotate-[17.52deg]">
           {/* Base line */}
           <div className="h-[2px] w-[1341.243px] bg-[#d8b4fe]/15" />
@@ -514,7 +542,7 @@ export default function MacBookAir() {
           />
         </div>
       </div>
-      <div className="absolute flex h-[403.699px] items-center justify-center left-[0.63px] top-[3122.67px] w-[1279.046px]">
+      <div className="absolute flex h-[403.699px] items-center justify-center left-[0.63px] top-[4372px] w-[1279.046px]">
         <div className="-scale-y-100 flex-none rotate-[-17.52deg]">
           {/* Base line */}
           <div className="h-[2px] w-[1341.243px] bg-[#d8b4fe]/15" />
@@ -529,7 +557,7 @@ export default function MacBookAir() {
           />
         </div>
       </div>
-      <div className="absolute h-[2px] left-[0.93px] top-[3397.5px] w-[1279.141px]" data-node-id="50:108">
+      <div className="absolute h-[2px] left-[0.93px] top-[4647px] w-[1279.141px]" data-node-id="50:108">
         {/* Base line */}
         <div className="absolute inset-0 bg-[#d8b4fe]/15" />
         {/* Fill line */}
@@ -542,27 +570,27 @@ export default function MacBookAir() {
           }}
         />
       </div>
-      <div ref={studentLedRef} className="absolute inset-0 pointer-events-none" style={{ top: '3253px', height: '100px' }} />
-      <div className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[218px] not-italic text-[20px] text-black top-[3253px] whitespace-nowrap" data-node-id="54:109">
+      <div ref={studentLedRef} className="absolute inset-0 pointer-events-none" style={{ top: '4503px', height: '100px' }} />
+      <div className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[218px] not-italic text-[20px] text-black top-[4503px] whitespace-nowrap" data-node-id="54:109">
         <ScrambleText text="WE'RE SMALL" trigger={studentLedTrigger} className="mb-0" />
         <ScrambleText text="STUDENT-LED" trigger={studentLedTrigger} />
       </div>
-      <div className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[948px] not-italic text-[20px] text-black top-[3253px] whitespace-nowrap" data-node-id="54:111">
+      <div className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[948px] not-italic text-[20px] text-black top-[4503px] whitespace-nowrap" data-node-id="54:111">
         <ScrambleText text="AND WE'RE" trigger={studentLedTrigger} className="mb-0" />
         <ScrambleText text="INDIA BORN" trigger={studentLedTrigger} />
       </div>
-      <div className="-translate-x-1/2 absolute overflow-hidden group h-[434px] left-[calc(50%-0.5px)] top-[3092px] w-[369px]" data-node-id="54:110">
+      <div className="-translate-x-1/2 absolute overflow-hidden group h-[434px] left-[calc(50%-0.5px)] top-[4342px] w-[369px]" data-node-id="54:110">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full transition-transform duration-500 ease-out group-hover:scale-110" src={imgRectangle26} />
       </div>
-      <div className="absolute font-['DiamondGrotesk',sans-serif] font-bold leading-[0.9] left-[calc(50%-560px)] text-[140px] text-black top-[3883px] w-[1100px] whitespace-pre-wrap" data-node-id="56:115" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
+      <div className="absolute font-['DiamondGrotesk',sans-serif] font-bold leading-[0.9] left-[calc(50%-560px)] text-[140px] text-black top-[5133px] w-[1100px] whitespace-pre-wrap" data-node-id="56:115" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
         <p className="mb-0">
           WHAT <span className="text-[20px] font-medium text-black/40 align-top inline-block ml-6 mt-10 tracking-[0.2em] transform -translate-y-2">(SRVS)</span>
         </p>
         <p>WE CAN DO</p>
       </div>
 
-      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[calc(50%+102px)] not-italic text-black text-[24px] top-[3936px] w-[452px]" data-node-id="56:116">{`"Turning static into substance. Tech solutions that refuse to blend in."`}</p>
-      <div className="absolute left-0 top-[4254px] w-full flex flex-col items-center">
+      <p className="absolute font-['DiamondGrotesk',sans-serif] leading-[normal] left-[calc(50%+102px)] not-italic text-black text-[24px] top-[5186px] w-[452px]" data-node-id="56:116">{`"Turning static into substance. Tech solutions that refuse to blend in."`}</p>
+      <div className="absolute left-0 top-[5504px] w-full flex flex-col items-center">
         {services.map((service, index) => {
           const isExpanded = expandedService === index;
           return (
