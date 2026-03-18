@@ -159,9 +159,9 @@ export default function SmokyHeroBackground() {
 
     const resize = () => {
       const W = window.innerWidth;
-      const H = 688; 
+      const H = 688;
       // Optimized: Use lower internal resolution for heavy shaders
-      const pr2 = 0.75; 
+      const pr2 = 0.75;
       cv.width = W * pr2;
       cv.height = H * pr2;
       cv.style.width = W + 'px';
@@ -202,8 +202,8 @@ export default function SmokyHeroBackground() {
     const d = id.data;
     for (let i = 0; i < d.length; i += 4) {
       const v = (Math.random() * 255) | 0;
-      d[i] = d[i+1] = d[i+2] = v;
-      d[i+3] = 255;
+      d[i] = d[i + 1] = d[i + 2] = v;
+      d[i + 3] = 255;
     }
     ox.putImageData(id, 0, 0);
     const pattern = ctx.createPattern(off, 'repeat')!;
