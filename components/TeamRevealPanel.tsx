@@ -17,7 +17,7 @@ interface TeamRevealPanelProps {
   left: number;
 }
 
-export default function TeamRevealPanel({ isOpen, onClose, member, top, left }: TeamRevealPanelProps) {
+export default function TeamRevealPanel({ isOpen, member, top, left }: TeamRevealPanelProps) {
   return (
     <div
       className="absolute z-50"
