@@ -44,7 +44,7 @@ export default function MacBookAir() {
       linkedin: 'https://linkedin.com',
     },
     {
-      bio: 'Amaan Ahmed brings technical excellence and creative innovation to the team. With expertise in 3D visualization and interactive experiences, he creates immersive digital worlds that captivate audiences and push the boundaries of what\'s possible in digital design.',
+      bio: 'Mukunda Bhanot brings technical excellence and creative innovation to the team. With expertise in 3D visualization and interactive experiences, he creates immersive digital worlds that captivate audiences and push the boundaries of what\'s possible in digital design.',
       instagram: 'https://instagram.com',
       linkedin: 'https://linkedin.com',
     },
@@ -362,8 +362,8 @@ export default function MacBookAir() {
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle22} />
       </div>
       <div className="absolute font-['DiamondGrotesk',sans-serif] leading-[122.96500396728516%] left-[739px] not-italic text-[32px] text-black top-[8010px] uppercase w-[189px] whitespace-pre-wrap" data-node-id="33:13">
-        <p className="mb-0">{`aMAAN `}</p>
-        <p>AHMED</p>
+        <p className="mb-0">{`MUKUNDA `}</p>
+        <p>BHANOT</p>
       </div>
       <MagneticButton className="absolute h-[75px] left-[739px] top-[8126px] w-[76px] flex items-center justify-center" data-node-id="33:15" onClick={() => setOpenPanel(openPanel === 2 ? null : 2)}>
         <div className="absolute inset-0 rounded-full border-[0.2px] border-black" />

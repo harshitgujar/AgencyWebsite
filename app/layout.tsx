@@ -1,9 +1,18 @@
 import type { Metadata } from 'next'
+import { Instrument_Serif } from "next/font/google";
 import './globals.css'
 import CustomCursor from '@/components/CustomCursor'
 import SmoothScroll from '@/components/SmoothScroll'
 import Navbar from '@/components/Navbar'
 import LiquidBackground from '@/components/LiquidBackground'
+import AppWrapper from "@/components/AppWrapper";
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  style: "italic",
+  weight: "400",
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   title: 'United Unbound',
@@ -17,13 +26,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black overflow-x-hidden">
-        <LiquidBackground />
-        <Navbar />
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
-        <CustomCursor />
+      <body className={`${instrumentSerif.variable} bg-black overflow-x-hidden`}>
+        <AppWrapper>
+          <LiquidBackground />
+          <Navbar />
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+          <CustomCursor />
+        </AppWrapper>
       </body>
     </html>
   )
