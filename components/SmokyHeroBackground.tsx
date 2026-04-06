@@ -49,8 +49,8 @@ export default function SmokyHeroBackground() {
         float ar = u_res.x / u_res.y;
         float T  = u_time * 0.55; // Further reduced speed for a calmer feel
 
-        // Shift effect starting point higher (smaller lower range)
-        float animMask = smoothstep(0.65, 0.20, uv.y);
+        // Smoke fills the entire area now
+        float animMask = 1.0;
 
         vec2 flameUV = uv;
         flameUV.y += T * 0.12; 
@@ -114,7 +114,7 @@ export default function SmokyHeroBackground() {
         float cov = smoothstep(0.0, 1.0, wSum * 0.90);
         vec3 col = mix(grad, blobNorm, cov * 0.60);
 
-        float flameMask = smoothstep(0.75, 0.05, vWarp) * animMask;
+        float flameMask = 1.0; // Dynamic mask removed for full coverage
 
         float flick1 = fbm(smokeUV * 4.5 + T * 1.5);
         float flicker = flick1 * 0.32; 
@@ -123,11 +123,7 @@ export default function SmokyHeroBackground() {
         col += flicker * flameMask * 0.20 * vec3(1.0, 1.0, 1.0); 
 
         float density = fbm(smokeUV * 3.0 + T * 0.5);
-        col *= (1.0 - animMask * 0.15) + animMask * density * 0.30;
-
-        float bottomWhite = smoothstep(0.55, 0.95, vWarp);
-        vec3 floorCol = mix(vec3(0.55, 0.25, 0.95), vec3(1.0, 1.0, 1.0), bottomWhite);
-        col = max(col, floorCol);
+        col *= (1.0 - 0.15) + density * 0.30;
 
         gl_FragColor = vec4(clamp(col, 0., 1.), 1.0);
       }
@@ -221,7 +217,7 @@ export default function SmokyHeroBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 w-full h-[688px] overflow-hidden pointer-events-none bg-white will-change-transform">
+    <div className="absolute inset-0 w-full h-[688px] overflow-hidden pointer-events-none will-change-transform">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ imageRendering: 'auto' }} />
       <canvas ref={grainCanvasRef} className="absolute inset-0 opacity-[0.1] mix-blend-overlay w-full h-full pointer-events-none" />
     </div>

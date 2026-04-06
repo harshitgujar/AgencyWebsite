@@ -16,6 +16,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Plank';
+  src: url('/fonts/PLANK__.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Removed scroll-behavior: smooth to avoid conflict with custom SmoothScroll */
 
 body {

@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function Navbar() {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
+          setIsDark(currentScrollY > 620);
           
           // Show at top
           if (currentScrollY < 120) {
@@ -77,15 +79,15 @@ export default function Navbar() {
       <div className="relative w-full h-[120px]">
         {/* Logo */}
         <svg 
-          width="55" 
-          height="33" 
-          viewBox="0 0 75 45" 
+          width="60" 
+          height="38" 
+          viewBox="0 0 71 45" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute left-[47px] top-[62px] cursor-pointer pointer-events-auto"
+          className="absolute left-[47px] top-[60px] cursor-pointer pointer-events-auto transition-colors duration-500"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <path d="M56.8424 0.00914109C61.3782 0.105 65.9601 -0.0258588 70.5017 0.0400564C71.8604 0.0596949 73.6836 0.124733 75 0C72.2518 5.60153 69.8247 11.4526 67.1236 17.0849C66.2842 18.8358 65.3639 20.7025 64.6216 22.4888C58.8348 22.4782 52.2518 22.3212 46.5197 22.5347C48.114 25.72 49.7228 29.3776 51.2344 32.6412L54.7653 40.3393C55.4202 41.7562 56.3193 43.5664 56.8683 45C50.8286 44.9424 44.7879 44.9399 38.7475 44.9925C35.4703 37.4269 31.7512 29.9949 28.4228 22.4814C27.427 24.9951 26.0739 27.7794 24.9353 30.2479C22.6428 35.1384 20.3804 40.0432 18.1484 44.9622C16.6328 45.0269 14.9464 44.9383 13.411 44.9632C8.99545 45.0348 4.39647 44.8609 0 44.9853C1.03409 42.8616 2.05203 40.5414 3.04871 38.3855C5.01544 34.1812 6.96054 29.9667 8.8841 25.742L20.7312 0.00894527C24.3708 0.144567 28.4377 -0.0363592 32.138 0.0303338C33.5353 0.0556111 37.6662 0.136887 38.8751 0.00184839C36.3914 5.20352 34.0934 10.5303 31.6147 15.7385C30.5735 17.926 29.5437 20.3509 28.4219 22.4823C34.2698 22.434 40.6878 22.3661 46.5168 22.4906C47.6236 19.8095 49.1651 16.7405 50.4036 14.072L56.8424 0.00914109Z" fill="black"/>
+          <path d="M51.4703 5.96775C53.1306 2.34163 56.7871 0.043433 60.7751 0.0222066C63.1411 0.00961365 65.5084 -0.00915784 67.8647 0.0250418C69.8333 0.0534946 71.2585 2.26332 70.4334 4.05084C68.4352 8.3798 66.5401 12.7881 64.4867 17.0699C64.4139 17.2217 64.3405 17.3744 64.2667 17.5278C62.8369 20.4989 59.8343 22.466 56.5372 22.4381C56.0379 22.4338 55.5366 22.4297 55.0342 22.4259C49.812 22.3863 46.4025 27.8874 48.5974 32.6262L52.1284 40.3243C53.1586 42.5534 51.5728 44.9602 49.1172 44.9494C46.5775 44.9383 44.0376 44.9383 41.4977 44.9452C38.2324 44.9559 35.2731 43.0276 33.9176 40.0568C32.415 36.7635 30.8623 33.4867 29.3295 30.2086C27.9884 27.3404 23.6245 27.3578 22.2983 30.2329C20.6761 33.6935 19.069 37.1613 17.477 40.6362C16.2666 43.2783 13.6798 44.901 10.774 44.9481C8.75299 44.9809 6.69355 44.9623 4.63268 44.9443C1.32441 44.9155 -0.976585 41.3735 0.411749 38.3705C2.37848 34.1662 4.32358 29.9516 6.24714 25.727L15.3046 6.05345C16.9937 2.38449 20.7255 0.0633737 24.7644 0.0198707C26.3686 0.00259209 27.9664 -0.0123416 29.5011 0.0153192C32.4378 0.0684452 34.6187 3.42694 33.4021 6.10033C31.9391 9.31526 30.4921 12.5415 28.9777 15.7235C27.5273 18.7708 29.8721 22.4279 33.2469 22.4123C35.041 22.404 36.8428 22.4016 38.6234 22.4103C41.7923 22.4259 44.6864 20.5486 46.0465 17.6863C46.6367 16.4441 47.2301 15.213 47.7666 14.057L51.4703 5.96775Z" fill={isDark ? "white" : "black"}/>
         </svg>
 
         {/* Links */}
@@ -94,7 +96,9 @@ export default function Navbar() {
             <p
               key={item}
               onClick={() => scrollToSection(item.toLowerCase())}
-              className="font-['DiamondGrotesk',sans-serif] leading-[normal] not-italic text-black text-[12px] whitespace-nowrap cursor-pointer hover:text-[#d8b4fe] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-110 origin-center"
+              className={`font-['DiamondGrotesk',sans-serif] leading-[normal] not-italic text-[12px] whitespace-nowrap cursor-pointer hover:text-[#d8b4fe] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-110 origin-center ${
+                isDark ? 'text-white' : 'text-black'
+              }`}
             >
               {item}
             </p>

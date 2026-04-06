@@ -74,9 +74,9 @@ export const ScrollAnimatedText = ({ text, className }: { text: string, classNam
 
         return (
           <span key={i} className="relative inline-block">
-            <span className="text-[#a1a1a1]">{word}</span>
+            <span className="text-[#444]">{word}</span>
             <span 
-              className="absolute left-0 top-0 text-[#222222] overflow-hidden whitespace-nowrap"
+              className="absolute left-0 top-0 text-[#fff] overflow-hidden whitespace-nowrap transition-colors duration-300"
               style={{ width: `${fillPercentage}%` }}
             >
               {word}

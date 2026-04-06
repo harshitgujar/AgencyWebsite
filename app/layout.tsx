@@ -4,7 +4,6 @@ import './globals.css'
 import CustomCursor from '@/components/CustomCursor'
 import SmoothScroll from '@/components/SmoothScroll'
 import Navbar from '@/components/Navbar'
-import LiquidBackground from '@/components/LiquidBackground'
 import AppWrapper from "@/components/AppWrapper";
 
 const instrumentSerif = Instrument_Serif({
@@ -28,7 +27,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${instrumentSerif.variable} bg-black overflow-x-hidden`}>
         <AppWrapper>
-          <LiquidBackground />
           <Navbar />
           <SmoothScroll>
             {children}
